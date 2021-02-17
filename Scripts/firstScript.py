@@ -13,6 +13,7 @@ from keras.models import load_model
 import numpy as np
 import matplotlib.pyplot as plt
 
+# this needs to change
 trdata = ImageDataGenerator()
 traindata = trdata.flow_from_directory(directory="data",target_size=(224,224))
 tsdata = ImageDataGenerator()
