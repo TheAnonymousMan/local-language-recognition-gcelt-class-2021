@@ -29,7 +29,8 @@ def image_loader(img_path):
     print(img_data.shape)
     return img_data
 
-img_path = '../Datasets/writerPair1/0-10/train/0000_01_0.tif'
+
+img_path = '../Datasets/writerPair1/0-10/train/0/0000_01_0.tif'
 img_data = image_loader(img_path)
 model_feature = model.predict(img_data)
 model_feature.shape
