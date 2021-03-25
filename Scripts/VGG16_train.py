@@ -56,7 +56,6 @@ def image_loader(img_path):
     # google 
     img_data = preprocess_input(img_data)
 
-
     print(img_data.shape)
     return img_data
 
@@ -66,5 +65,4 @@ img_data = image_loader(img_path)
 #using the pretrained vgg16 model to output the feature matrix of one single image for testing
 model_feature = model.predict(img_data)
 
-#
 print(model_feature.shape)
