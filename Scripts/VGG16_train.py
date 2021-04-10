@@ -1,3 +1,4 @@
+import os
 import keras
 from PIL import Image
 from keras.preprocessing import image
@@ -82,10 +83,8 @@ np.save("feature.npy", model_feature)
 df = pd.DataFrame(feature_matrix)
 df.to_csv('feature.csv', index=False)
 
-import os
 
-
-root_dir_train = '../Datasets/writerpair1/0-10/train/0/'
+root_dir_train = '../Datasets/writerPair1/0-10/train/0'
 
 '''for subdir, dirs, files in os.walk(root_dir_train):
     for file in files:
@@ -100,11 +99,11 @@ root_dir_train = '../Datasets/writerpair1/0-10/train/0/'
 
 datagen = ImageDataGenerator(rescale=1./255)
 generator = datagen.flow_from_directory(
-        root_dir_train,
-        target_size=(224, 224),
-        batch_size=32,
-        class_mode='sparse',
-        shuffle=True)
+    root_dir_train,
+    target_size=(224, 224),
+    batch_size=32,
+    class_mode='sparse',
+    shuffle=True)
 
-#for x, y in generator:
- # print(y)
+for x, y in generator:
+    print(y)
