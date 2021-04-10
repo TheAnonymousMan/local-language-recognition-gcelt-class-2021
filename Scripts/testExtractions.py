@@ -1,8 +1,6 @@
 import FeatureDatasetExtractor as FDE
 import os
 
-outFolder = "../CSVDatasets"
-inFolder = "../Datasets/writerPair1/0-10/train"
 
 def PrepareFeatureCsv(parentFolder, outputFolder):
     for folderName in os.listdir(parentFolder):
@@ -13,4 +11,14 @@ def PrepareFeatureCsv(parentFolder, outputFolder):
         FDE.saveFeatureDatasetCSV(
             FDE.DataExtractionModel_VGG16, inputFolder,  outputFileName, FDE.TARGET_SIZE)
 
-PrepareFeatureCsv(inFolder, outFolder)
+
+base_directory = r'../Datasets'
+for folder in os.listdir(base_directory):
+    for subfolder in os.listdir(f"../Datasets/{str(folder)}"):
+        outFolder = "../CSVDatasets"
+        inFolder = f"../Datasets/{str(folder)}/{str(subfolder)}/train"
+
+        PrepareFeatureCsv(inFolder, outFolder)
+        print(f"{str(folder)} --> {str(subfolder)} Completed!")
+                
+
