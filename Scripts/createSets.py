@@ -20,3 +20,4 @@ def createSubDatasets(directory):
                             f"{directory}/{str(f)}/{sf}/train/{ssf}/{imageName}"), f"{folder_dir}/{imageName}")
 
                 print(f"Set {ssf} is completed.")
+
