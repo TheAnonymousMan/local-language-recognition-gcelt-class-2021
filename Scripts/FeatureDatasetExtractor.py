@@ -1,3 +1,8 @@
+import tensorflow as tf
+from tensorflow.python.client import device_lib
+
+from keras import backend as K
+
 from keras.applications.vgg16 import VGG16
 from keras.models import Model
 
@@ -8,6 +13,12 @@ from keras.applications.vgg16 import preprocess_input
 import numpy as np
 import csv
 import os
+
+sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))
+
+print(device_lib.list_local_devices())
+
+K.tensorflow_backend._get_available_gpus()
 
 # constant for target size for resizing image
 TARGET_SIZE = (224, 224)

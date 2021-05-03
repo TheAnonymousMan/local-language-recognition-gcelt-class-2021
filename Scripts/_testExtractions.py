@@ -4,7 +4,6 @@ import os
 outFolder = "_CSVDataset"
 inFolder = "test"
 
-
 def PrepareFeatureCsv(parentFolder,outputFolder):
     for folderName in os.listdir(parentFolder):
         inputFolder = parentFolder + '/' + folderName
